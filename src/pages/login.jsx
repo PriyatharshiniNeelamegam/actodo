@@ -6,7 +6,7 @@ function Login(props) {
     const users = props.users
     const [eusername, setEusername] = useState()
     const [epassword, setEpassword] = useState()
-    const [ruser, setRuser] = useState()
+    const [ruser, setRuser] = useState(true)
     
     function Checkuser() {
         var userfound=false
@@ -16,7 +16,7 @@ function Login(props) {
                 userfound=true
                 navigate("/landing",{state:{users:eusername}})
             }
-            if(userfound===true){
+            if(userfound===false){
                 console.log("Login failed")
                 setRuser(false)
             }
